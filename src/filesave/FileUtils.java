@@ -248,7 +248,7 @@ public class FileUtils {
 
                     Method openOutputStreamMethod = contentResolver.getClass().getMethod("openOutputStream", uriClass);
 //                OutputStream fos = (OutputStream) openOutputStreamMethod.invoke(contentResolver, uriResult);// 这一行是优化后的代码，如果出现问题，就注释掉下面，使用这一行
-                    
+
                     // 通过反射调用 openOutputStream 获取 OutputStream
                     try (OutputStream fos = (OutputStream) openOutputStreamMethod.invoke(contentResolver, uriResult)) {
                         if (fos != null) {
